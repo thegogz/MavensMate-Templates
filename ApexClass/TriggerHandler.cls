@@ -1,12 +1,12 @@
-public class {{ api_name }} 
+public class {{ api_name }}
 {
     /**
      *   Enum representing each of before/after CRUD events on Sobjects
      */
-    public enum Evt 
+    public enum Evt
     {
         afterdelete, afterinsert, afterundelete,
-        afterupdate, beforedelete, beforeinsert, beforeupdate   
+        afterupdate, beforedelete, beforeinsert, beforeupdate
     }
 
     /*
@@ -15,8 +15,8 @@ public class {{ api_name }}
      */
     public interface HandlerInterface
     {
-        void handle();          
-    } 
+        void handle();
+    }
 
     // Internal mapping of handlers
     Map<String, List<HandlerInterface>> eventHandlerMapping = new Map<String, List<HandlerInterface>>();
@@ -27,7 +27,7 @@ public class {{ api_name }}
     public {{ api_name }} bind(Evt event, HandlerInterface eh)
     {
         List<HandlerInterface> handlers = eventHandlerMapping.get(event.name());
-        if (handlers == null) 
+        if (handlers == null)
         {
             handlers = new List<HandlerInterface>();
             eventHandlerMapping.put(event.name(), handlers);
@@ -68,14 +68,14 @@ public class {{ api_name }}
         }
         else if(Trigger.isundelete)
         {
-            ev = Evt.afterundelete;             
+            ev = Evt.afterundelete;
         }
-        
+
         List<HandlerInterface> handlers = eventHandlerMapping.get(ev.name());
-        
-        if (handlers != null && ! handlers.isEmpty()) 
+
+        if (handlers != null && ! handlers.isEmpty())
         {
-            for (HandlerInterface h : handlers) 
+            for (HandlerInterface h : handlers)
             {
                 h.handle();
             }
