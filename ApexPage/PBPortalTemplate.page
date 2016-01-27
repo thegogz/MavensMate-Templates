@@ -1,0 +1,25 @@
+<apex:page docType="html-5.0" showHeader="false" standardStylesheets="false" applyBodyTag="false">
+
+  <apex:composition template="PortalTemplate">
+
+    <apex:define name="head-css-links">
+    </apex:define>
+
+    <apex:define name="head-css-local">
+    </apex:define>
+
+    <apex:define name="head-js-links">
+    </apex:define>
+
+    <apex:define name="sidebar-nav-items">
+    </apex:define>
+
+    <apex:define name="body-content">
+    </apex:define>
+
+    <apex:define name="footer-js-scripts">
+    </apex:define>
+
+  </apex:composition>
+
+</apex:page>

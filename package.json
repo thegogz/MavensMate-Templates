@@ -254,6 +254,19 @@
     ],
     "ApexPage" : [
         {
+            "name"          : "Portal Page",
+            "file_name"     : "PBPortalTemplate.page",
+            "description"   : "Template for Property Button Pages Using Portal Template",
+            "author"        : "Eoin O Neill (@thegogz)",
+            "params"        : [
+                {
+                    "name"          : "api_name",
+                    "description"   : "Visualforce Page API Name",
+                    "default"       : "PortalHome"
+                }
+           ]
+        },
+        {
             "name"          : "Visualforce Page",
             "file_name"     : "ApexPage.page",
             "description"   : "Basic Visualforce Page template",
